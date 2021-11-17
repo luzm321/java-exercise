@@ -20,30 +20,27 @@ public class Main {
 
         // Using lambda expression denoted by thin arrow -> in the ArrayList's forEach() method
         // to print every item in the list:
+        // A lambda expression is a short block of code which takes in parameters and returns a value.
         System.out.println("Number List Using forEach method:");
-        numbers.forEach( (n) -> {
-            System.out.println(n);
-            }
-        );
+        numbers.forEach( (n) -> System.out.println(n) );
 
-        System.out.println(); // adds space in between the code in command line app
+        System.out.println("-------Fruits-------"); // adds space in between the code in command line app
 
         // List of strings with object initializer:
         ArrayList<String> fruits = new ArrayList<String>() {
             {
                 add("mango");
-                add("dragonfruit");
-                add("jackfruit");
+                add("dragon fruit");
+                add("jack fruit");
                 add("watermelon");
             }
         };
 
-        Consumer<String> fruitCollection = (fruit) -> {
-            System.out.println("Fruit: " + fruit);
-        };
+        Consumer<String> fruitCollection = (fruit) -> System.out.println("Fruit: " + fruit);
+
         fruits.forEach(fruitCollection);
 
-        System.out.println();
+        System.out.println("--------Intro--------");
 
         // invoking introducePerson() method with different values:
         introducePerson("Luz", 28);
@@ -54,6 +51,6 @@ public class Main {
     // by name and age based on values passed for each corresponding parameters:
     public static void introducePerson(String name, Integer age) {
         System.out.println(String.format("Hello, my name is %s and I'm %s.", name, age));
-    };
+    }
 
 }
