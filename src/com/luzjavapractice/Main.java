@@ -8,7 +8,7 @@ import java.util.function.Consumer; // Use Java's Consumer interface to store a 
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static <numbers> void main(String[] args) {
         // List of integers:
 //        ArrayList<Integer> numbers = new ArrayList<Integer>();
 //        numbers.add(21);
@@ -195,21 +195,47 @@ public class Main {
 //        // method instead to get full name that includes last name as well
 //        System.out.println("Your name is " + name);
 
-        System.out.println("-----\"Mortgage Calculator Project\"--------");
+        System.out.println("-----\"Mortgage Calculator Project with Error Handling\"--------");
+        // Can make code cleaner by creating a method that calculates mortgage
         final byte MONTHS_IN_YEAR = 12; // constant
         final byte PERCENT = 100; // constant
 
+        int principal = 0;
+        float monthlyInterest = 0;
+        int numberOfPayments = 0;
+
         Scanner userInput = new Scanner(System.in);
-        System.out.print("Principal: ");
-        int principal = userInput.nextInt();
 
-        System.out.print("Annual Interest Rate: ");
-        float annualInterest = userInput.nextFloat();
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+        while (true) {
+            System.out.print("Principal: ");
+            principal = userInput.nextInt();
+            if (principal >= 1000 && principal <= 1_000_000) {
+                break;
+            } else {
+                System.out.println("Please enter a value between 1000 and 1000000");
+            }
+        }
 
-        System.out.print("Period (Years): ");
-        byte years = userInput.nextByte();
-        int numberOfPayments = years * MONTHS_IN_YEAR;
+        while (true) {
+            System.out.print("Annual Interest Rate: ");
+            float annualInterest = userInput.nextFloat();
+            if (annualInterest >= 1 && annualInterest <= 30) {
+                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+                break;
+            } else {
+                System.out.println("Please enter a value between 1 and 30");
+            }
+        }
+
+        while (true) {
+            System.out.print("Period (Years): ");
+            byte years = userInput.nextByte();
+            if (years >= 1 && years <= 30) {
+                numberOfPayments = years * MONTHS_IN_YEAR;
+                break;
+            }
+            System.out.println("Please enter a value between 1 and 30");
+        }
 
         double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
@@ -217,7 +243,123 @@ public class Main {
         String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + formattedMortgage);
 
+//        System.out.println("------Comparison Operators-------");
+//        int x = 1;
+//        int y = 1;
+//        //System.out.println(x == y);
+//        System.out.println(x != y);
 
+//        System.out.println("----Logical Operators----");
+//        int temperature = 21;
+//        boolean isWarm = temperature > 20 && temperature < 30;
+//        System.out.println(isWarm);
+
+//        boolean hasHighIncome = true;
+//        boolean hasGoodCredit = false;
+//        boolean hasCriminalRecord = false;
+//        boolean isEligible = (hasHighIncome || hasGoodCredit) && !hasCriminalRecord;
+//        System.out.println(isEligible);
+
+//        System.out.println("----If Statements----");
+//        int temp = 21;
+//        if (temp > 30) {
+//            System.out.println("It's a hot day.");
+//            System.out.println("Drink plenty of water.");
+//        } else if (temp > 20 && temp <= 30) {
+//            System.out.println("It's a nice day.");
+//        } else {
+//            System.out.println("It's cold.");
+//        }
+
+//        int income = 200_000;
+//        boolean hasHighIncome = (income > 100_000);
+//        System.out.println(hasHighIncome);
+
+//        System.out.println("------Ternary Operator------");
+//        int income = 120_000;
+//        String className = income > 100_000 ? "First" : "Economy";
+//        System.out.println(className);
+
+//        System.out.println("----Switch Statements----");
+//        String role = "admin";
+//        switch (role) {
+//            case "admin":
+//                System.out.println("You're an admin");
+//                break; // jumps out of switch block
+//            case "moderator":
+//                System.out.println("You're a moderator");
+//                break;
+//            default:
+//                System.out.println("You're a guest");
+//
+//        }
+
+//        System.out.println("----FizzBuzz Exercise-----");
+//        Scanner userInput = new Scanner(System.in);
+//        System.out.print("Number: ");
+//        int number = userInput.nextInt();
+//        if (number % 15 == 0) {
+//            System.out.println("FizzBuzz");
+//        } else if (number % 3 == 0) {
+//            System.out.println("Fizz");
+//        } else if (number % 5 == 0) {
+//            System.out.println("Buzz");
+//        } else {
+//            System.out.println(number);
+//        }
+//        System.out.println("----For Loops----");
+//        final String[] colors = {"green", "blue", "lilac", "black"};
+//        for (int i = 0; i < colors.length; i++ ) {
+//            if (colors[i] == "green") {
+//                System.out.println(String.format("%s is my favorite color!", colors[i]));
+//            } else {
+//                System.out.println(String.format("%s is nice, but not my favorite.", colors[i]));
+//            }
+//        }
+
+//        System.out.println("-----While Loops-----"); // useful when we don't know how many times we need to iterate
+//        String input = "";
+//        Scanner userInput = new Scanner(System.in);
+//        while (!input.equals("quit")) {
+//            System.out.print("Input: ");
+//            input = userInput.nextLine().toLowerCase();
+//            System.out.println(input);
+//        }
+
+//        System.out.println("----Do...While Loops----");
+//        // code executes once, even if initial condition is false
+//        String input = "";
+//        Scanner userInput = new Scanner(System.in);
+//        do {
+//            System.out.print("Input: ");
+//            input = userInput.nextLine().toLowerCase();
+//            System.out.println(input);
+//        } while (!input.equals("quit"));
+//        System.out.println("-----Break and Continue-----");
+//        String input = "";
+//        Scanner userInput = new Scanner(System.in);
+//        while (true) {
+//            System.out.print("Input: ");
+//            input = userInput.nextLine().toLowerCase();
+//            if (input.equals("pass")) {
+//                continue;
+//            }
+//            if (input.equals("quit")) {
+//                break;
+//            } else {
+//                System.out.println(input);
+//            }
+//        }
+
+//        System.out.println("----For-Each Loop----");
+//        String[] fruits = {"mango", "watermelon", "dragon fruit"};
+//        for (String fruit : fruits) {
+//            System.out.println(fruit);
+//        }
+
+//        fruits.forEach((fruit) -> System.out.println(fruit));
+
+        System.out.println("-----");
     }
 
     // method that prints a string to the console (template literal/string interpolation) of person introducing self
