@@ -4,6 +4,7 @@ package com.luzjavapractice; // specifies the package the class belongs to
 import java.text.NumberFormat;
 import java.util.*;
 //import java.util.*;
+//import java.util.Scanner;
 import java.util.function.Consumer; // Use Java's Consumer interface to store a lambda expression in a variable:
 
 public class Main {
@@ -195,53 +196,53 @@ public class Main {
 //        // method instead to get full name that includes last name as well
 //        System.out.println("Your name is " + name);
 
-        System.out.println("-----\"Mortgage Calculator Project with Error Handling\"--------");
-        // Can make code cleaner by creating a method that calculates mortgage
-        final byte MONTHS_IN_YEAR = 12; // constant
-        final byte PERCENT = 100; // constant
-
-        int principal = 0;
-        float monthlyInterest = 0;
-        int numberOfPayments = 0;
-
-        Scanner userInput = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Principal: ");
-            principal = userInput.nextInt();
-            if (principal >= 1000 && principal <= 1_000_000) {
-                break;
-            } else {
-                System.out.println("Please enter a value between 1000 and 1000000");
-            }
-        }
-
-        while (true) {
-            System.out.print("Annual Interest Rate: ");
-            float annualInterest = userInput.nextFloat();
-            if (annualInterest >= 1 && annualInterest <= 30) {
-                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
-                break;
-            } else {
-                System.out.println("Please enter a value between 1 and 30");
-            }
-        }
-
-        while (true) {
-            System.out.print("Period (Years): ");
-            byte years = userInput.nextByte();
-            if (years >= 1 && years <= 30) {
-                numberOfPayments = years * MONTHS_IN_YEAR;
-                break;
-            }
-            System.out.println("Please enter a value between 1 and 30");
-        }
-
-        double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
-                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Mortgage: " + formattedMortgage);
+//        System.out.println("-----\"Mortgage Calculator Project with Error Handling\"--------");
+//        // Can make code cleaner by creating a method that calculates mortgage
+//        final byte MONTHS_IN_YEAR = 12; // constant
+//        final byte PERCENT = 100; // constant
+//
+//        int principal = 0;
+//        float monthlyInterest = 0;
+//        int numberOfPayments = 0;
+//
+//        Scanner userInput = new Scanner(System.in);
+//
+//        while (true) {
+//            System.out.print("Principal: ");
+//            principal = userInput.nextInt();
+//            if (principal >= 1000 && principal <= 1_000_000) {
+//                break;
+//            } else {
+//                System.out.println("Please enter a value between 1000 and 1000000");
+//            }
+//        }
+//
+//        while (true) {
+//            System.out.print("Annual Interest Rate: ");
+//            float annualInterest = userInput.nextFloat();
+//            if (annualInterest >= 1 && annualInterest <= 30) {
+//                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+//                break;
+//            } else {
+//                System.out.println("Please enter a value between 1 and 30");
+//            }
+//        }
+//
+//        while (true) {
+//            System.out.print("Period (Years): ");
+//            byte years = userInput.nextByte();
+//            if (years >= 1 && years <= 30) {
+//                numberOfPayments = years * MONTHS_IN_YEAR;
+//                break;
+//            }
+//            System.out.println("Please enter a value between 1 and 30");
+//        }
+//
+//        double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
+//                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+//
+//        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
+//        System.out.println("Mortgage: " + formattedMortgage);
 
 //        System.out.println("------Comparison Operators-------");
 //        int x = 1;
@@ -359,7 +360,27 @@ public class Main {
 
 //        fruits.forEach((fruit) -> System.out.println(fruit));
 
-        System.out.println("-----");
+        System.out.println("---More Java Practice---");
+
+        System.out.print("Enter your age: ");
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
+        int age = Integer.parseInt(input);
+        // Rudimentary nesting if/else statements (Control flow):
+        if (age >= 18) {
+            System.out.print("Enter your fave food: ");
+            String food = sc.nextLine().toLowerCase();
+            if (food.equals("bibimbap")) {
+                System.out.println("That's my fave food also!");
+            } else {
+                System.out.println("I like that food too, but it's not my fave.");
+            }
+        } else if (age >= 13) {
+            System.out.println("You're a teenager!");
+        } else {
+            System.out.println("You're not a teenager or adult!");
+        }
     }
 
     // method that prints a string to the console (template literal/string interpolation) of person introducing self
