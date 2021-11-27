@@ -3,6 +3,8 @@ package com.luzjavapractice; // specifies the package the class belongs to
 // technologies/frameworks in one application. IML files store a module's type, paths, dependencies, and other settings.
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.Set;
+import java.util.HashSet;
 //import java.util.*;
 //import java.util.Scanner;
 import java.util.function.Consumer; // Use Java's Consumer interface to store a lambda expression in a variable:
@@ -362,26 +364,238 @@ public class Main {
 
         System.out.println("---More Java Practice---");
 
-        System.out.print("Enter your age: ");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+//        System.out.print("Enter your age: ");
+//        Scanner sc = new Scanner(System.in);
+//        String input = sc.nextLine();
+//
+//        int age = Integer.parseInt(input);
+//        // Rudimentary nesting if/else statements (Control flow):
+//        if (age >= 18) {
+//            System.out.print("Enter your fave food: ");
+//            String food = sc.nextLine().toLowerCase();
+//            if (food.equals("bibimbap")) {
+//                System.out.println("That's my fave food also!");
+//            } else {
+//                System.out.println("I like that food too, but it's not my fave.");
+//            }
+//        } else if (age >= 13) {
+//            System.out.println("You're a teenager!");
+//        } else {
+//            System.out.println("You're not a teenager or adult!");
+//        }
 
-        int age = Integer.parseInt(input);
-        // Rudimentary nesting if/else statements (Control flow):
-        if (age >= 18) {
-            System.out.print("Enter your fave food: ");
-            String food = sc.nextLine().toLowerCase();
-            if (food.equals("bibimbap")) {
-                System.out.println("That's my fave food also!");
-            } else {
-                System.out.println("I like that food too, but it's not my fave.");
-            }
-        } else if (age >= 13) {
-            System.out.println("You're a teenager!");
-        } else {
-            System.out.println("You're not a teenager or adult!");
-        }
+        // For Loop Practice:
+//        int[] numbers = {1,2,3,4,5};
+//        String[] names = new String[5];
+
+//        int count = 0; // counter to keep track of count value/index in loop
+//        // for each element in the array: every time you iterate through this loop, we're going to declare a new variable
+//        // called element, and it's going to be equal to the next element in the numbers array:
+//        for (int element:numbers) {
+//            System.out.println(element + " " + count);
+//            count++; // increment 1 to value of count variable
+//        }
+//        Scanner sc = new Scanner(System.in);
+//        // Populating the names array with values with for loop:
+//        for (int i = 0; i < names.length; i++) {
+//            System.out.print("Input: ");
+//            String input = sc.nextLine();
+//            names[i] = input;
+//        }
+//
+//        for (String name:names) {
+//            System.out.println("name: " + name);
+//            if (name.equals("Luz")) {
+//                System.out.println("Found Luz!");
+//                break; // only use break if needed
+//            }
+//        }
+
+        // Sets and Lists from collection interface in Java:
+        // A set should be unique (cannot contain duplicate elements) and does not know where the elements are:
+        // HashSet is a common implementation of a standard set and values are not in order, can't index a set:
+//        Set<Integer> t = new HashSet<Integer>(); // can pass variable containing values in parentheses of hashset
+//        t.add(1);
+//        t.add(2);
+//        t.add(3);
+//        t.add(1); // will not be added to set as it is a duplicate
+//        t.add(4);
+//        t.add(-5);
+//        t.remove(3);
+////        t.clear(); //clears an entire set
+//        t.isEmpty(); // checks if a set is empty or not
+//        t.size(); // length of set
+//
+//        System.out.println(t);
+//        boolean x = t.contains(2); // can quickly find out if a value exists in a set compared to an array
+//        System.out.println(x);
+
+       // TreeSet similar to HashSet in having unique elements, but ordered in a tree data structure
+        // LinkedHashSet faster in performance
+
+        // Lists like arrays, but slower and can modify size/length of elements in list for a dynamic list:
+        // Can index a list just like an array, unlike a set which cannot be indexed:
+//        ArrayList<Integer> t = new ArrayList<Integer>();
+//        t.add(21);
+//        t.add(3);
+//        t.add(4);
+//        t.get(0); // get index of element in list with output of 21
+//        t.set(1, 5); // sets index 1 to have value of 5 to re-assign values by index in list; need to have an already
+//        // existing value for that index prior to using set
+//        t.subList(1, 2); // get values of elements within a certain range between 2 indexes, not including, last index
+//        System.out.println(t);
+//        System.out.println(t.subList(1, 2)); // output is 5 as it is a value between index 1 and 2, not including index
+        // of 2, but including index of 1;
+
+        // LinkedList is faster at certain operations than an ArrayList
+
+        // HashMaps or Java Maps (Like a dictionary):
+        // A map is a key-value pair, index a map by the keys (any data type), a key links to a value:
+        // a fast data type and occurs in constant time and unordered
+        // A hashmap must have unique keys, but can have duplicate values
+//        Map m = new HashMap();
+//        m.put("age", 21); // to put any value into a map, need to specify a key and a value
+//        m.put("color", "green");
+//        m.put(3, 10);
+          //m.containsValue("green"); // checks to see if value exists in the map
+        // m.containsKey("age"); // checks if key exists in map // returns null if does not exist
+        // m.clear();
+        //m.isEmpty();
+        // System.out.println(m.values()); // prints values of map unordered, same for m.keys();
+        // m.remove("age"); // remove a key from a map
+//        System.out.println(m); // output is {3=10, color=green, age=21}
+//        System.out.println(m.get("age")); // retrieve value of a key from a map/hashmap
+
+        // TreeMap is sorted in alphabetical order, but data types of keys must be the same
+//        Map m = new TreeMap();
+//        m.put("name", "Luz");
+//        m.put("favorite number", 5);
+//        System.out.println(m);
+
+        // LinkedHashMap is similar to a list where it keeps the same order of elements added to it
+//        Map m = new LinkedHashMap();
+//        m.put("name", "Luz");
+//        m.put("favorite number", 5);
+//        System.out.println(m);
+
+        // HashMap Example (Looping through every letter in string, checking if map already contains that letter as a
+        // key, if so increment by 1 through each loop, else create new key of that letter and initialize value as 1)
+        // spaces are also included as a key in the map:
+//        Map m = new HashMap();
+//        String str = "Hello my name is Luz and I'm learning Java";
+//        for (char x:str.toCharArray()) { // convert string to a character array so that we can iterate through it
+//            if (m.containsKey(x)) {
+//                int old = (int) m.get(x);
+//                m.put(x, old + 1); // if character (key) already exists in map, increment count by 1
+//            } else {
+//                m.put(x, 1); //if character does not exist in map, create new key of that letter with initial value of 1
+//            }
+//        }
+//        m.remove(' '); // will remove space from character array
+//        System.out.println(m);
+
+        // Sorting through a range within an array:
+//        int[] numArray = {-5, 0, -3, 2, 1, 6, 5, 4};
+//        Arrays.sort(numArray, 1, 5); //takes 3 arguments and sorts in place
+//        //(first arg is the array to be sorted, other 2 are optional that is the starting and ending index range inclusive
+//        // of starting index, but excludes ending index)
+//        // Arrays.sort(numArray); // sorts through all the elements in order rather than a specified range
+//        for (int i:numArray) {
+//            System.out.print(i + ",");
+//        }
+        // output: -5, -3, 0, 1, 2, 3, 5, 4
+
+        // Objects Practice:
+        // An object is an instance of a data type like a class (blueprint/template for creating objects) with
+        // properties and methods and represent real-world objects
+
+//        displayAge(21, 3);
+//        int sum = addNumbers(1,2);
+//        System.out.println(sum);
+
+        // Creating Classes and instantiating new object of type Dog:
+        // Created instance of Dog class and stored in object/variable named cindy that references Dog object
+        // pass arguments to constructor
+//        Dog cindy = new Dog("Cindy", 15);
+//        cindy.speak();
+//        Dog nova = new Dog("Nova", 10);
+//        nova.setAge(5);
+//        nova.speak();
+//        Dog kona = new Dog("Kona", 12);
+//        kona.speak();
+//        int dogAge = kona.getAge();
+//        System.out.println("Kona's age: " + dogAge);
+//        System.out.println("Number of dogs created: " + Dog.count);
+
+//        Cat peach = new Cat("Peach", 3, "Munchkin");
+//        peach.speak(); // inherit speak method from Dog class
+//        Cat bob = new Cat("Bob", 21);
+//        bob.speak();
+//        Cat james = new Cat("James");
+//        james.speak();
+
+        // Instantiating Student class:
+//        Student tim = new Student("Tim");
+//        var bob = new Student("Bob");
+//        var nelly = new Student("Nelly");
+//        // Comparing objects
+//        System.out.println(tim.equals(bob));
+//        System.out.println(tim.compareTo(nelly) > 0);
+//        System.out.println(tim); // will automatically invoke toString() method in Student class
+//        System.out.println(bob.toString());
+
+        // Instantiating OuterClass to use InnerClass:
+//        OuterClass out = new OuterClass(); // will call default constructor that does not need any arguments passed
+//        out.inner();
+//
+//        OuterClass outer = new OuterClass();
+//        OuterClass.InnerClass in = out.new InnerClass(); // creating new instance of InnerClass within OuterClass
+//        in.display();
+
+        // Interfaces and instantiating Car class to create object that implements the Vehicle interface:
+//        Car mazda = new Car();
+//        mazda.speedUp(10);
+//        mazda.changeGear(3);
+//        mazda.display();
+//
+//        int sum = Vehicle.addition(1,2);
+//        System.out.println(sum);
+
+        // Enums: collection of constants that can be referenced
+        Level lvl = Level.LOW;
+
+        System.out.println(lvl.getLvl());
+        System.out.println(Level.valueOf("LOW"));
+
+//        String en = lvl.toString();
+//        Level[] levels = Level.values();
+//        System.out.println();
+//
+//        for (Level a : levels) {
+//            System.out.println(a);
+//        }
+//
+//        if (lvl == Level.LOW) {
+//            System.out.println(lvl);
+//        } else if (lvl == Level.MEDIUM) {
+//            System.out.println(lvl);
+//        } else {
+//            System.out.println(lvl);
+//        }
+
+
+
     }
+    // method that prints age
+//    public static void displayAge(int age, int x) {
+//        for (int i = 0; i < x; i++) {
+//            System.out.println("I am " + age + "!");
+//        }
+//    }
+//
+//    public static int addNumbers(int a, int b) {
+//        return a + b;
+//    }
 
     // method that prints a string to the console (template literal/string interpolation) of person introducing self
     // by name and age based on values passed for each corresponding parameters:
