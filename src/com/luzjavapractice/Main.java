@@ -1,7 +1,9 @@
 package com.luzjavapractice; // specifies the package the class belongs to
 // A module file (the .iml file) is used for keeping module configuration. Modules allow you to combine several
 // technologies/frameworks in one application. IML files store a module's type, paths, dependencies, and other settings.
+import java.sql.Array;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Set;
 import java.util.HashSet;
@@ -562,10 +564,10 @@ public class Main {
 //        System.out.println(sum);
 
         // Enums: collection of constants that can be referenced
-        Level lvl = Level.LOW;
-
-        System.out.println(lvl.getLvl());
-        System.out.println(Level.valueOf("LOW"));
+//        Level lvl = Level.LOW;
+//
+//        System.out.println(lvl.getLvl());
+//        System.out.println(Level.valueOf("LOW"));
 
 //        String en = lvl.toString();
 //        Level[] levels = Level.values();
@@ -583,7 +585,66 @@ public class Main {
 //            System.out.println(lvl);
 //        }
 
+//       // Rolling Die example:
+//        Random randomRoll = new Random();
+//        int result = randomRoll.nextInt(6) + 1;
+//        System.out.println("You rolled a: " + result);
 
+        // Nested For Loops:
+//        String colors[] = {"Green", "Blue", "Lilac"};
+//        for (int i = 0; i < colors.length; i++) {
+//            System.out.println(colors[i]);
+//        }
+
+//        String[][] fancyColors = { {"Green", "Blue", "Lilac"},
+//                                   {"Cyan", "Magenta", "Turquoise"}
+//        };
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                System.out.println(fancyColors[i][j]);
+//            }
+//        }
+
+        // Formatting Dates in Java:
+//        Date currentDate = new Date();
+//        System.out.println(currentDate);
+//
+//        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
+//        System.out.println(timeFormat.format(currentDate));
+//
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+//        System.out.println(dateFormat.format(currentDate));
+//
+//        SimpleDateFormat dayOfWeekFormat = new SimpleDateFormat("EEEE");
+//        System.out.println(dayOfWeekFormat.format(currentDate));
+//
+//        SimpleDateFormat clockFormat = new SimpleDateFormat("h:mm a");
+//        System.out.println(clockFormat.format(currentDate));
+
+        // Another while loop example:
+//        String sentence = "Pandas are awesome!";
+//        ArrayList<String> words = new ArrayList<String>();
+//        Scanner scan = new Scanner(sentence);
+//        while (scan.hasNext()) {
+//            words.add(scan.next());
+//        }
+//        System.out.println(words);
+
+        // Finding duplicate characters from a string:
+        String sentence = "How many duplicates are there?";
+        System.out.println(sentence);
+        String characters = "";
+        String duplicates = "";
+        for (int i = 0; i < sentence.length(); i++) {
+            String current = Character.toString(sentence.charAt(i)); // convert character into a string
+            if (characters.contains(current)) {
+                if (!duplicates.contains(current)) {
+                    duplicates += current + " ";
+                }
+            }
+            characters += current;
+        }
+        System.out.println(duplicates);
 
     }
     // method that prints age
