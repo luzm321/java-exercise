@@ -631,20 +631,129 @@ public class Main {
 //        System.out.println(words);
 
         // Finding duplicate characters from a string:
-        String sentence = "How many duplicates are there?";
-        System.out.println(sentence);
-        String characters = "";
-        String duplicates = "";
-        for (int i = 0; i < sentence.length(); i++) {
-            String current = Character.toString(sentence.charAt(i)); // convert character into a string
-            if (characters.contains(current)) {
-                if (!duplicates.contains(current)) {
-                    duplicates += current + " ";
-                }
+//        String sentence = "How many duplicates are there?";
+//        System.out.println(sentence);
+//        String characters = "";
+//        String duplicates = "";
+//        for (int i = 0; i < sentence.length(); i++) {
+//            String current = Character.toString(sentence.charAt(i)); // convert character into a string
+//            if (characters.contains(current)) {
+//                if (!duplicates.contains(current)) {
+//                    duplicates += current + " ";
+//                }
+//            }
+//            characters += current;
+//        }
+//        System.out.println(duplicates);
+
+        //TAU:
+
+        // Each store employee makes 15/hr. Write program that allows an employee to the number of hours worked for the
+        // week. Do not allow overtime:
+
+        //initialize known variables:
+//        int rate = 15;
+//        int maxHours = 40;
+//
+//        // Get input for unknown variables:
+//        System.out.println("How many hours did you work this week?");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        double hoursWorked = scanner.nextDouble();
+//
+//        //Validate input:
+//        while (hoursWorked > maxHours || hoursWorked < 1) {
+//            System.out.println("Invalid entry. Your hours must be between 1 and 40. Try again.");
+//            hoursWorked = scanner.nextDouble(); // sentinel that controls flow of loop and updated to break out of loop
+//        }
+//
+//        scanner.close();
+//
+//        // Calculate gross:
+//        double gross = rate * hoursWorked;
+//        System.out.println("Gross pay: $" + gross);
+
+        // Do...while loop:
+
+//        var scanner = new Scanner(System.in);
+//        boolean again;
+//
+//        do {
+//            System.out.print("Enter first number: ");
+//            double num1 = scanner.nextDouble();
+//
+//            System.out.print("Enter second number: ");
+//            double num2 = scanner.nextDouble();
+//
+//            double sum = num1 + num2;
+//
+//            System.out.println("The sum is: " + sum);
+//
+//            System.out.println("Would you like to start over? Enter true or false");
+//            again = scanner.nextBoolean();
+//        } while(again);
+//
+//        scanner.close();
+
+        // For Loop:
+        // Cashier program that will scan a given number of items and tally the cost:
+        //Get number of items to scan:
+//        System.out.println("Enter the number of items you would like to scan:");
+//        var scanner = new Scanner(System.in);
+//        int quantity = scanner.nextInt();
+//
+//        double total = 0;
+//
+//        //Create loop to iterate through all the items and accumulate the cost:
+//        for (int i = 0; i < quantity; i++) {
+//            System.out.println("Enter the cost of the item:");
+//            double price = scanner.nextDouble();
+//            total += price;
+//        }
+//        scanner.close();
+//        System.out.println("Your total is: $" + total);
+
+        // Letter Search: Program that searches a string to determine if it contains the letter 'A':
+        //Get text:
+//        System.out.print("Enter some text: ");
+//        var scanner = new Scanner(System.in);
+//        String text = scanner.nextLine();
+//        scanner.close();
+//
+//        boolean letterFound = false;
+//
+//        //Search text for letter 'A':
+//        for (int i = 0; i < text.length(); i++) {
+//            char currentLetter = text.charAt(i);
+//            if (currentLetter == 'A' || currentLetter == 'a') {
+//                letterFound = true;
+//                break;
+//            }
+//        }
+//
+//        if (letterFound) {
+//            System.out.println("This text contains the letter 'A'.");
+//        } else {
+//            System.out.println("This text does not contain the letter 'A'.");
+//        }
+
+        // Nested Loops (Find avg test scores for each student in class):
+        int numOfStudents = 24;
+        int numOfTests = 4;
+
+        var scanner = new Scanner(System.in);
+
+        for (int i = 0; i < numOfStudents; i++) {
+            double total = 0;
+            for (int j = 0; j < numOfTests; j++) {
+                System.out.println("Enter the score for Test #" + (j + 1));
+                double score = scanner.nextDouble();
+                total += score;
             }
-            characters += current;
+            double average = total/numOfTests;
+            System.out.println("The test average for Student #" + (i + 1) + " is " + average);
         }
-        System.out.println(duplicates);
+        scanner.close();
 
     }
     // method that prints age
