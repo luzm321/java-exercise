@@ -12,6 +12,9 @@ import java.util.HashSet;
 import java.util.function.Consumer; // Use Java's Consumer interface to store a lambda expression in a variable:
 
 public class Main {
+//    static int requiredSalary = 25_000;
+//    static int requiredCreditScore = 700;
+//    static Scanner scanner = new Scanner(System.in);
 
     public static <numbers> void main(String[] args) {
         // List of integers:
@@ -738,24 +741,80 @@ public class Main {
 //        }
 
         // Nested Loops (Find avg test scores for each student in class):
-        int numOfStudents = 24;
-        int numOfTests = 4;
+//        int numOfStudents = 24;
+//        int numOfTests = 4;
+//
+//        var scanner = new Scanner(System.in);
+//
+//        for (int i = 0; i < numOfStudents; i++) {
+//            double total = 0;
+//            for (int j = 0; j < numOfTests; j++) {
+//                System.out.println("Enter the score for Test #" + (j + 1));
+//                double score = scanner.nextDouble();
+//                total += score;
+//            }
+//            double average = total/numOfTests;
+//            System.out.println("The test average for Student #" + (i + 1) + " is " + average);
+//        }
+//        scanner.close();
 
-        var scanner = new Scanner(System.in);
+        // Method asks user for their name, and greets them by their name:
+//        System.out.print("Please enter your name: ");
+//        var scanner = new Scanner(System.in);
+//        String name = scanner.nextLine();
+//
+//        greetUser(name);
+        // Instant credit check:
+//        double salary = getSalary();
+//        int creditScore = getCreditScore();
+//        scanner.close();
+//        //check if user is qualified:
+//        boolean qualified = isUserQualified(salary, creditScore);
+//        //notify the user
+//        notifyUser(qualified);
 
-        for (int i = 0; i < numOfStudents; i++) {
-            double total = 0;
-            for (int j = 0; j < numOfTests; j++) {
-                System.out.println("Enter the score for Test #" + (j + 1));
-                double score = scanner.nextDouble();
-                total += score;
-            }
-            double average = total/numOfTests;
-            System.out.println("The test average for Student #" + (i + 1) + " is " + average);
+        // Convert decimal to int, wrapper class example from primitive double type to Double class/object data type
+        // to access intValue() method available from Double class/obj:
+        double[] numbers = { 1.1, 2.2, 3.3, 4.4 };
+        for (Double num: numbers) {
+            System.out.println(num.intValue());
         }
-        scanner.close();
+
 
     }
+    // Instant credit check program:
+
+//    public static double getSalary() {
+//        System.out.println("Enter you salary: ");
+//        double salary = scanner.nextDouble();
+//        return salary;
+//    }
+
+//    public static int getCreditScore() {
+//        System.out.println("Enter your credit score: ");
+//        int creditScore = scanner.nextInt();
+//        return creditScore;
+//    }
+
+//    public static boolean isUserQualified(double salary, int creditScore) {
+//        if (creditScore >= requiredCreditScore && salary >= requiredSalary) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
+//    public static void notifyUser(boolean isQualified) {
+//        if (isQualified) {
+//            System.out.println("Congrats, you've been approved!");
+//        } else {
+//            System.out.println("Sorry, you've been declined.");
+//        }
+//    }
+    // method greet person by name:
+//    public static void greetUser(String name) {
+//        System.out.println("Hi there, " + name);
+//    }
     // method that prints age
 //    public static void displayAge(int age, int x) {
 //        for (int i = 0; i < x; i++) {
