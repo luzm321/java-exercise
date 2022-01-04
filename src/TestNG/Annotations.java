@@ -102,7 +102,7 @@ public class Annotations {
                 " Successful Log In = " + success + "\n");
     }
 
-    @DataProvider(name = "signInProvider")
+    @DataProvider(name = "logInData")
     // JUnit5 annotation: @DisplayName("UserStory - TestCase - Description")
     // provides data to the logIn() test method with corresponding values to parameters as arguments
     // DataProvider annotation provides a way to pass an unlimited number of values of any data type to a test method
